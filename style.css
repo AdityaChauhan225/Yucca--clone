@@ -128,7 +128,6 @@ nav:hover {
     margin-top: 50px;
     display: flex;
     gap: 10px;
-    padding-left: 60px;
 }
 
 .card {
@@ -1153,12 +1152,21 @@ nav:hover {
 .sec10-bot{
     height: 70%;
     width: 100%;
+    display: flex;
+    align-items: start;
+    justify-content: end;
+    flex-direction: column;
+    padding-bottom: 30px;
+    gap: 40px;
 }
+
 
 .sec10-ser{
     height: 270px;
-    width: 100%;
+    width: calc(280px*4);
     display: flex;
+    justify-content: space-between;
+    align-items:center ;
 }
 
 .sec10-content{
@@ -1174,33 +1182,134 @@ nav:hover {
 .sec10-cont{
     height: 100%;
     width: 270px;
+    border: 1px solid black;
+    border-radius: 20px;
     display: flex;
-    justify-content: center;
     align-items: center;
-    border: 1px solid;
-    border-radius:20px ;
+    justify-content: center;
     overflow: hidden;
-}
+    transition: ease-in-out 0.3s;
+    position: relative;
 
-.sec10-bf{
+}
+.sec10-cont::before{
+    content: "";
+    position: absolute;
+    width: 100%; 
+    height: 100%;
+    z-index: 0;
+    background-image: url("https://yucca.co.za/wp-content/uploads/2025/09/service.jpg");
+    background-size: 120% 120%;
+    background-position: center;
+    opacity: 0;
+    transition: all ease-in-out 0.5s;
+}
+.sec10-overlay{
     height: 30px;
     width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
-    z-index: 999;
+    position: relative;
+    overflow: hidden;
+    font-family: font;
+    font-size: 15px;
 }
 
-.sec10-img1{
-    height: 270px;
-    width: 270px;
-    z-index: -1;
+.sec10-txt-bf{
     position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.1s;
 }
-.sec10-cont1:hover~.sec10-img1{
-    z-index: 9;
+
+.sec10-txt-af{
+    color: #fff;
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transform: translateY(90%);
+    transition: all 0.2s;
 }
 
+.sec10-cont:hover .sec10-txt-bf{
+    transform: translateY(-105%);
+}
+.sec10-cont:hover .sec10-txt-af{
+    transform: translateY(0%);
+}
 
+.sec10-cont:hover::before{
+    background-size: 100% 100%;
+    opacity: 0.9;
+}
 
+.sec10-cont:hover{
+    border-radius: 60px;
+}
 
+.sec10-cont2::before{
+    background-image: url("https://yucca.co.za/wp-content/uploads/2025/09/processing.jpg");
+}
+
+.sec10-cont3::before{
+    background-image: url("https://yucca.co.za/wp-content/uploads/2025/09/Agriculture.jpg");
+}
+
+.sec10-footer{
+    height: 40px;
+    width: calc(280px*4);
+    display: flex;
+    justify-content: space-between;
+    padding: 30px;
+    border: 1px solid black;
+    border-radius: 10px;
+}
+
+.sec10-footer-left{
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    gap: 20px;
+}
+
+.sec10-footer-right{
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    gap: 20px;
+}
+
+.sec10-footer-right-txt{
+    height: 20px;
+    width: 73px;
+    overflow: hidden;
+    transition: ease-in-out 0.2s;
+}
+
+.sec10-footer-right-bf{
+    transform: translateY(0%);
+    transition: ease-in-out 0.2s;
+
+}
+.sec10-footer-right-af{
+    transform: translateY(100%);
+    transition: ease-in-out 0.2s;
+
+}
+.sec10-footer-right-txt:hover .sec10-footer-right-af{
+    transform: translateY(-100%);
+}
+.sec10-footer-right-txt:hover .sec10-footer-right-bf{
+    transform: translateY(-100%);
+}
+
+.sec10-pp{
+    width: 100px;
+}
+
+.sec10-tc{
+    width: 135px;
+}
